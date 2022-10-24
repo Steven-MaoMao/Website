@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>帽帽的主页-留言板</title>
+    <link rel="shortcut icon" href="./img/logo-icon.ico" type="image/x-icon">
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/vue.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/live2d.css">
+    <link rel="stylesheet" href="./css/messageboard.css">
+    <script src="./js/index.js"></script>
+    <script src="./js/messageboard.js"></script>
+
+    <!-- Pollyfill script -->
+    <script src="./js/minified.js"></script>
+    <!-- Live2DCubismCore script -->
+    <script src="./js/live2dcubismcore.js"></script>
+    <!-- Build script -->
+    <script src="./js/bundle.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a id="icon_title" href="./index.html">
+            <img id="icon" src="./img/logo.png" />
+            <span id="title">帽帽的主页</span>
+        </a>
+        <a href="./messageboard.html" id="vice-title" onmouseover="viceTitleOver(this)" onmouseout="viceTitleOut(this)"
+            onmousedown="viceTitleDown(this)">留言板</a>
+        <div id="search">
+            <button id="search_button" @click="skip">搜索</button>
+            <input id="search_input" type="text" placeholder="╭(°A°`)╮" v-model="keywords" @keydown.enter="skip" />
+        </div>
+        <script>
+            var search = new Vue({
+                el: "#search",
+                data: {
+                    keywords: "",
+                },
+                methods: {
+                    skip() {
+                        window.location.href = "./search.html?keywords=" + this.keywords;
+                    },
+                },
+            });
+        </script>
+    </header>
+
+    <div id="main">
+        <div id="write_message">
+            <div style="height: 30px; display: flex; align-items: center;">昵称：</div>
+            <input type="text" id="write_message_name">
+            <div style="height: 30px; display: flex; align-items: center;">留言：</div>
+            <textarea id="write_message_text"></textarea>
+            <button id="send_message_button" onclick="sendMessage()">发表</button>
+        </div>
+
+        <div id="show_message"></div>
+
+        <div id="select_page"></div>
+    </div>
+
+    <footer id="footer">
+        <a href="https://beian.miit.gov.cn/" target="_blank" id="beian" onmouseover="beianMouseIn(this)"
+            onmouseout="beianMouseOut(this)">
+            沪ICP备2022010019号
+        </a>
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011202014272" target="_blank" id="beian"
+            onmouseover="beianMouseIn(this)" onmouseout="beianMouseOut(this)">
+            <img src="./img/备案图标.png" style="height: 6%; width: 6%;" />
+            <p>沪公网安备 31011202014272号</p>
+        </a>
+    </footer>
+
+    <div id="kanbanniang">
+        <div id="landlord" @click="click">
+            <canvas id="live2d" class="live2d" width="240" height="400"></canvas>
+        </div>
+        <div id="message_box" style="display: none;">
+            <div id="message">
+                {{message}}
+            </div>
+        </div>
+    </div>
+    <script>
+        var kanbanniang = new Vue({
+            el: "#kanbanniang",
+            data: {
+                message: "",
+                time: 0,
+                words: ["(-.-)…zz", "(-.-)…zzZZ"],
+                index: 0,
+            },
+            mounted() {
+                setInterval(() => {
+                    this.time += 1;
+                    if (this.time >= 5) {
+                        $("#message_box").fadeOut("normal", () => {
+                            this.message = "";
+                        });
+                        this.time = 5;
+                    }
+                }, 1000);
+            },
+            methods: {
+                click() {
+                    if (this.message == "" || this.message == this.words[0] || this.message == this.words[1]) {
+                        this.time = 0;
+                        this.message = this.words[this.index % 2];
+                        this.index += 1;
+                        $("#message_box").fadeIn();
+                    }
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

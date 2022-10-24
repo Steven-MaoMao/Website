@@ -1,0 +1,220 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom, center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 1000px;
+}
+
+header {
+    width: 900px;
+    height: 90px;
+    background: inherit;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 2px solid black;
+    top: -100px;
+    opacity: 0;
+}
+
+header::before {
+    content: "";
+    background: inherit;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    filter: blur(10px);
+}
+
+footer {
+    width: 900px;
+    height: 40px;
+    background: inherit;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+    top: -100px;
+    opacity: 0;
+}
+
+footer::before {
+    content: "";
+    background: inherit;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    filter: blur(10px);
+}
+
+#icon_title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+#icon {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border: 2px solid rgba(0, 0, 0, .8);
+    border-radius: 45px;
+    margin-right: 10px;
+
+}
+
+#title {
+    position: relative;
+    font-size: 200%;
+    font-weight: 500;
+}
+
+#vice-title {
+    position: relative;
+    padding: 15px;
+    margin-left: 25px;
+    font-size: 120%;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+}
+
+#search {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+}
+
+#search_button {
+    width: 50px;
+    height: 30px;
+    margin-right: 10px;
+    margin-left: 2px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px -2px black;
+}
+
+#search_button:active {
+    box-shadow: 0px 2px 2px -1px black inset;
+}
+
+#search_input {
+    width: 160px;
+    height: 25px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px -2px black;
+    background: inherit;
+}
+
+#beian {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#main {
+    width: 900px;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: inherit;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    border: 2px solid black;
+    top: -100px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#main::before {
+    content: "";
+    background: inherit;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    filter: blur(10px);
+}
+
+.content {
+    width: 800px;
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.content_title {
+    font-size: 120%;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.content_img_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content_img {
+    width: 120px;
+}
+
+.content_text {
+    width: 650px;
+    font-size: small;
+}
+
+#content {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
