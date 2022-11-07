@@ -49,10 +49,14 @@
 
     <div id="main">
         <div id="write_message">
-            <div style="height: 30px; display: flex; align-items: center;">昵称：</div>
-            <input type="text" id="write_message_name">
-            <div style="height: 30px; display: flex; align-items: center;">留言：</div>
-            <textarea id="write_message_text"></textarea>
+            <div id="name">
+                <div>昵称：</div>
+                <input type="text" id="write_message_name">
+            </div>
+            <div id="text">
+                <div>留言：</div>
+                <textarea id="write_message_text"></textarea>
+            </div>
             <button id="send_message_button" onclick="sendMessage()">发表</button>
         </div>
 
@@ -74,13 +78,13 @@
     </footer>
 
     <div id="kanbanniang">
-        <div id="landlord" @click="click">
-            <canvas id="live2d" class="live2d" width="240" height="400"></canvas>
-        </div>
         <div id="message_box" style="display: none;">
             <div id="message">
                 {{message}}
             </div>
+        </div>
+        <div id="landlord" @click="click">
+            <canvas id="live2d" class="live2d" width="240" height="400"></canvas>
         </div>
     </div>
     <script>

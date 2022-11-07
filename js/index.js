@@ -18,7 +18,7 @@ $(function () {
     setInterval("changePerSec()", 1000);
     $("#header").animate({ top: "0px", opacity: "1" });
     $("#main").delay(250).animate({ top: "0px", opacity: "1" });
-    $("#footer").delay(500).animate({ top: "0px", opacity: "1" });
+    $("#footer").delay(750).animate({ top: "0px", opacity: "1" });
 })
 
 function beianMouseIn(e) {

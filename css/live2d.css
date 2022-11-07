@@ -1,14 +1,18 @@
 #kanbanniang {
-    background: inherit;
+    position: fixed;
+    right: 1%;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
 }
 
 #landlord {
-    position: fixed;
-    right: 120px;
-    bottom: 0px;
+    position: relative;
     width: 240px;
     height: 400px;
-    z-index: 10000;
 }
 
 #live2d {
@@ -16,10 +20,8 @@
 }
 
 #message_box {
-    position: fixed;
-    width: 240px;
-    right: 120px;
-    bottom: 400px;
+    position: relative;
+    width: 200px;
     border: 2px solid black;
     background: inherit;
     border-radius: 10px;
@@ -29,26 +31,16 @@
     justify-content: center;
     align-items: center;
     padding: 5px;
-}
-
-#message_box::before {
-    content: "";
-    background: inherit;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    filter: blur(10px);
+    backdrop-filter: blur(5px);
 }
 
 #message {
-    position: relative;
+    position: inherit;
     color: white;
     user-select: none;
 }
 
-@media (max-width: 1600px) {
+/* @media (max-width: 1120px) {
     #landlord {
         display: none;
     }
@@ -56,7 +48,7 @@
     #message_box {
         visibility: hidden;
     }
-}
+} */
 
 @keyframes shake {
     2% {
