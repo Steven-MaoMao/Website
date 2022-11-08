@@ -171,8 +171,9 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 188px;
+    margin-left: 30%;
     padding: 5px;
+    padding-left: 10px;
     border-top: 1px solid gray;
 }
 
@@ -181,19 +182,18 @@
     flex-direction: column;
     align-items: flex-start;
     padding-right: 5px;
+    width: 32%;
 }
 
 .comment_name {
     font-size: small;
     font-weight: 500;
-    margin-left: 12px;
     word-break: break-all;
 }
 
 .comment_time {
     font-size: xx-small;
     font-weight: 200;
-    transform: scale(0.8);
 }
 
 .comment_text {
