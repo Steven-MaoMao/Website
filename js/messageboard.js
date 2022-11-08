@@ -76,15 +76,19 @@ function sendMessage() {
         url: "http://150.158.48.232:5600/sendmessage",
         type: 'get',
         data: { name: name, message: message },
-        success: function (res) { },
+        success: function (res) {
+            if (res == "success") {
+                window.location.href = window.location.href.split("?")[0];
+                $("#write_message_name").val("");
+                $("#write_message_text").val("");
+            } else {
+                console.log("website backend error");
+            }
+        },
         error: function (res) {
             console.log("ajax get error");
         },
     })
-
-    window.location.href = window.location.href.split("?")[0];
-    $("#write_message_name").val("");
-    $("#write_message_text").val("");
 }
 
 function sendComment(e) {
@@ -95,15 +99,19 @@ function sendComment(e) {
         url: "http://150.158.48.232:5600/sendcomment",
         type: 'get',
         data: { name: name, comment: comment, parent: e },
-        success: function (res) { },
+        success: function (res) {
+            if (res == "success") {
+                window.location.href = window.location.href.split("?")[0];
+                $("#" + e + " .write_comment_name").val("");
+                $("#" + e + " .write_comment_text").val("");
+            } else {
+                console.log("website backend error");
+            }
+        },
         error: function (res) {
             console.log("ajax get error");
         },
     })
-
-    window.location.href = window.location.href.split("?")[0];
-    $("#" + e + " .write_comment_name").val("");
-    $("#" + e + " .write_comment_text").val("");
 }
 
 function comment(e) {
